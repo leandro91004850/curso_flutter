@@ -5,7 +5,11 @@ void main() {
 }
 
 class PerguntaApp extends StatelessWidget {
-  PerguntaApp({super.key});
+
+
+  String responder() {
+    return 'Pergunta respondida';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,20 +35,21 @@ class PerguntaApp extends StatelessWidget {
           ),
           backgroundColor: Color.fromARGB(255, 70, 141, 80),
         ),
+
         body: Column(
           children: <Widget>[
             Text(perguntas[0]),
-            const ElevatedButton(
-              child: Text('Resposta 1'),
-              onPressed:null
+            ElevatedButton(
+              child: const Text('Resposta 1'),
+              onPressed: () => print('Resposta 1'),
             ),
-            const ElevatedButton(
-              child: Text('Resposta 2'),
-              onPressed:null
+            ElevatedButton(
+              child: const Text('Resposta 2'),
+              onPressed: () => print('Resposta 2'),
             ),
-            const ElevatedButton(
-              child: Text('Resposta 3'),
-              onPressed:null
+            ElevatedButton(
+              child: const Text('Resposta 3'),
+              onPressed: () => print(responder()),
             ),
           ], 
         ),
