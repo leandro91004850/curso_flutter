@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,13 +8,16 @@ void main() {
 
 class PerguntaApp extends StatelessWidget {
 
+  var perguntaSelecionada = 0;
 
   String responder() {
-    return 'Pergunta respondida';
+    perguntaSelecionada++;
+    return '$perguntaSelecionada - Pergunta respondida';
   }
 
   @override
   Widget build(BuildContext context) {
+    bool botaoclicado = false;
 
     final perguntas = [
       'Qual é a sua cor favorita?',
@@ -29,13 +34,12 @@ class PerguntaApp extends StatelessWidget {
           ),
           title: const Text('Perguntas'),
           shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
+            borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(30),
             ),
           ),
           backgroundColor: Color.fromARGB(255, 70, 141, 80),
         ),
-
         body: Column(
           children: <Widget>[
             Text(perguntas[0]),
@@ -51,7 +55,7 @@ class PerguntaApp extends StatelessWidget {
               child: const Text('Resposta 3'),
               onPressed: () => print(responder()),
             ),
-          ], 
+          ],
         ),
       ),
     );
