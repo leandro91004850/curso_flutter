@@ -1,11 +1,12 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(PerguntaApp());
+  //runApp(PerguntaApp());
+  runApp(DevicePreview(builder: (context) => PerguntaApp()));
 }
 
-class PeguntaAppState extends State<PerguntaApp>{
-  
+class PeguntaAppState extends State<PerguntaApp> {
   var perguntaSelecionada = 0;
 
   void responder() {
@@ -17,12 +18,12 @@ class PeguntaAppState extends State<PerguntaApp>{
 
   @override
   Widget build(BuildContext context) {
-   
     final perguntas = [
       'Qual é a sua cor favorita?',
       'Qual é o seu animal favorito?',
-      
     ];
+
+    
 
     return MaterialApp(
       home: Scaffold(
@@ -41,33 +42,30 @@ class PeguntaAppState extends State<PerguntaApp>{
           backgroundColor: Color.fromARGB(255, 70, 141, 80),
         ),
         body: Column(
-          children: <Widget>[
+          children: [
             Text(perguntas[perguntaSelecionada]),
             ElevatedButton(
               child: const Text('Resposta 1'),
-              onPressed: () => print('Resposta 1'),
+              onPressed: responder
             ),
             ElevatedButton(
               child: const Text('Resposta 2'),
-              onPressed: () => print('Resposta 2'),
+              onPressed: responder,
             ),
             ElevatedButton(
               child: const Text('Resposta 3'),
-              onPressed: () => print(responder),
+              onPressed: responder,
             ),
           ],
         ),
       ),
     );
   }
-
 }
 
 class PerguntaApp extends StatefulWidget {
-
   @override
   PeguntaAppState createState() {
     return PeguntaAppState();
   }
-  
 }
