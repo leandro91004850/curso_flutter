@@ -16,3 +16,8 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## run flutter comand: CTRL + F5
+
+## doctor flutter comand
+```shell
+flutter doctor -v
+```
