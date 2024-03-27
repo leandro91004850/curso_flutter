@@ -10,7 +10,7 @@ class SegundaPagina extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushNamed(context, '/quiz');
           },
           child: Text('Voltar para a Primeira Página'),
         ),

@@ -22,3 +22,8 @@ samples, guidance on mobile development, and a full API reference.
 flutter doctor -v
 ```
 
+## flutter pub get and flutter pub upgrade
+```shell
+flutter pub get
+flutter pub upgrade
+```
