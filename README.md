@@ -27,3 +27,15 @@ flutter doctor -v
 flutter pub get
 flutter pub upgrade
 ```
+
+## Inserindo o http no pubspec.yaml
+```shell
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.0.0
+```
+## atualizando o pubspec.yaml com http
+```shell
+    flutter pub add http
+```

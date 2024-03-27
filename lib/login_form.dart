@@ -1,6 +1,24 @@
+import "package:curso_flutter/testeApi.dart";
 import "package:flutter/material.dart";
 
 class LoginPageState extends State<LoginPage> {
+  var apiService = ApiService();
+
+  @override
+  void initState() {
+    super.initState();
+    chamandoTesteApi();
+  }
+
+  Future<void> chamandoTesteApi() async {
+    try {
+      var result = await apiService.testeApi();
+      print(result);
+    } catch (e) {
+      print(e);
+    }
+  }
+
   final usernameInput = TextEditingController();
   final passwordInput = TextEditingController();
   var isLogin = false;
@@ -44,13 +62,12 @@ class LoginForm extends StatelessWidget {
   final Function login;
   final bool isLogin;
 
-  const LoginForm({
-    super.key,
-    required this.usernameController,
-    required this.passwordController,
-    required this.login,
-    required this.isLogin
-  });
+  const LoginForm(
+      {super.key,
+      required this.usernameController,
+      required this.passwordController,
+      required this.login,
+      required this.isLogin});
 
   @override
   Widget build(BuildContext context) {
