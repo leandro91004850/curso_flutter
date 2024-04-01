@@ -8,7 +8,7 @@ import 'segunda_pagina.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Navegação',
-    initialRoute: '/login',
+    initialRoute: '/quiz',
     routes: {
       '/': (context) => PrimeiraPagina(),
       '/segunda': (context) => SegundaPagina(),
